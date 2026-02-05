@@ -5,10 +5,10 @@ export const env = createEnv({
   server: {
     SITE_URL: z.string().url().optional(),
     GOOGLE_SITE_VERIFICATION_ID: z.string().min(1).optional(),
- 
+
     EXA_API_KEY: z.string().min(1).optional(),
     OPENROUTER_API_KEY: z.string().min(1).optional(),
-    OPENROUTER_MODEL: z.string().default("tngtech/deepseek-r1t2-chimera:free"), // ⭐ Added safely
+    OPENROUTER_MODEL: z.string().default('tngtech/deepseek-r1t2-chimera:free'), // ⭐ Added safely
   },
   client: {
     NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: z.string().min(1).optional(),
@@ -18,7 +18,7 @@ export const env = createEnv({
   runtimeEnv: {
     SITE_URL: process.env.SITE_URL,
     GOOGLE_SITE_VERIFICATION_ID: process.env.GOOGLE_SITE_VERIFICATION_ID,
-   
+
     EXA_API_KEY: process.env.EXA_API_KEY,
     OPENROUTER_API_KEY: process.env.OPENROUTER_API_KEY,
     OPENROUTER_MODEL: process.env.OPENROUTER_MODEL, // ⭐ Added safely

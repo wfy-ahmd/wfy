@@ -31,7 +31,7 @@ export async function POST(request: NextRequest) {
           'X-Title': 'Wafry Ahamed Portfolio Chatbot',
         },
         body: JSON.stringify({
-          model:env.OPENROUTER_MODEL || 'tngtech/deepseek-r1t2-chimera:free',
+          model: env.OPENROUTER_MODEL || 'tngtech/deepseek-r1t2-chimera:free',
           messages: [
             {
               role: 'system',

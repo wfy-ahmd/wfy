@@ -55,12 +55,12 @@ export const projectsData = [
       'Material Design',
       'Navigation Component',
       'Glide',
-      'Lottie Animations'
+      'Lottie Animations',
     ],
     links: {
       preview: 'https://github.com/WafryAhamed/Daily-Food-Planner-Application',
-      github: 'https://github.com/WafryAhamed/Daily-Food-Planner-Application'
-    }
+      github: 'https://github.com/WafryAhamed/Daily-Food-Planner-Application',
+    },
   },
 
   {
@@ -76,12 +76,12 @@ export const projectsData = [
       'Day.js',
       'SCSS',
       'Movie Database API',
-      'Lazy Loading'
+      'Lazy Loading',
     ],
     links: {
       preview: 'https://github.com/WafryAhamed/TeamBug',
-      github: 'https://github.com/WafryAhamed/TeamBug'
-    }
+      github: 'https://github.com/WafryAhamed/TeamBug',
+    },
   },
 
   {
@@ -97,11 +97,12 @@ export const projectsData = [
       'Google Gemini',
       'JavaScript',
       'Manrope Font',
-      'Vercel' ],
+      'Vercel',
+    ],
     links: {
       preview: 'https://github.com/WafryAhamed/Luca',
-      github: 'https://github.com/WafryAhamed/Luca'
-    }
+      github: 'https://github.com/WafryAhamed/Luca',
+    },
   },
 
   {
@@ -118,12 +119,12 @@ export const projectsData = [
       'Lucide React',
       'React Icons',
       'CSS',
-      'ESLint'
+      'ESLint',
     ],
     links: {
       preview: 'https://github.com/WafryAhamed/Baked_Delights_website',
-      github: 'https://github.com/WafryAhamed/Baked_Delights_website'
-    }
+      github: 'https://github.com/WafryAhamed/Baked_Delights_website',
+    },
   },
 
   {
@@ -142,12 +143,12 @@ export const projectsData = [
       'NumPy',
       'Matplotlib',
       'Seaborn',
-      'Jupyter Notebook'
+      'Jupyter Notebook',
     ],
     links: {
       preview: 'https://github.com/yourusername/student-grade-prediction',
-      github: 'https://github.com/yourusername/student-grade-prediction'
-    }
+      github: 'https://github.com/yourusername/student-grade-prediction',
+    },
   },
 
   {
@@ -165,13 +166,15 @@ export const projectsData = [
       'Cisco 2911 Router',
       'Cisco 3650 L3 Switch',
       'Cisco 2960 L2 Switches',
-      'Star Topology'
+      'Star Topology',
     ],
     links: {
-      preview: 'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP',
-      github: 'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP'
-    }
-  }
+      preview:
+        'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP',
+      github:
+        'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP',
+    },
+  },
 ] as const;
 
 export const skillsData = [

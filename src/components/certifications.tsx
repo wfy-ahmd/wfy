@@ -77,7 +77,10 @@ export default function Certifications() {
         }}
       />
 
-      <div id="certifications" className="container relative z-10 mx-auto max-w-6xl px-4">
+      <div
+        id="certifications"
+        className="container relative z-10 mx-auto max-w-6xl px-4"
+      >
         <motion.h2
           initial={headerInitial}
           whileInView={headerWhileInView}

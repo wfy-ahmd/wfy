@@ -240,7 +240,6 @@ export const Intro = () => {
               Icon: Icons.linkedin,
             },
             { href: 'https://github.com/', Icon: Icons.github },
-         
           ].map(({ href, Icon }, i) => (
             <motion.div
               key={i}

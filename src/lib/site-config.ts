@@ -66,9 +66,6 @@ export const siteConfig = {
   ],
   url: 'https://your-domain.com', // replace with your real domain
   googleSiteVerificationId: '',
-  locales: [
-    'en',
-    'en-US',
-  ],
+  locales: ['en', 'en-US'],
   defaultLocale: 'en',
 };

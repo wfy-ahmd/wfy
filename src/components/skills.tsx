@@ -21,7 +21,10 @@ const fadeInAnimationVariants = {
 export const Skills = () => {
   const prefersReducedMotion = useReducedMotion();
   return (
-    <div id="skills" className="mt-10 flex w-full flex-wrap justify-between gap-10 px-5 sm:justify-center sm:px-0 md:mt-14 lg:justify-between">
+    <div
+      id="skills"
+      className="mt-10 flex w-full flex-wrap justify-between gap-10 px-5 sm:justify-center sm:px-0 md:mt-14 lg:justify-between"
+    >
       {skillsData.map(({ icon }, index) => (
         <motion.div
           key={index}

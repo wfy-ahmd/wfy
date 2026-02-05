@@ -16,9 +16,12 @@ const nextConfig = {
   // Compiler options (SWC is enabled by default in Next.js 12+)
   compiler: {
     // Remove console logs in production (powered by SWC)
-    removeConsole: process.env.NODE_ENV === 'production' ? {
-      exclude: ['error', 'warn'],
-    } : false,
+    removeConsole:
+      process.env.NODE_ENV === 'production'
+        ? {
+            exclude: ['error', 'warn'],
+          }
+        : false,
   },
 };
 
