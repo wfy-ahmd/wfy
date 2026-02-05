@@ -18,7 +18,7 @@ export const About = () => {
       transition={{ delay: 0.175 }}
     >
       <SectionHeading heading="About Me" />
-      <div className="-mt-5 max-w-3xl text-center leading-7 text-justify text-justify-inter-word">
+      <div className="-mt-5 max-w-3xl text-justify leading-7">
         <p className="mb-4">
           I’m Wafry Ahamed, a passionate tech enthusiast and versatile
           full-stack developer with a strong foundation in modern web and mobile
