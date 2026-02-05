@@ -82,7 +82,7 @@ export const Intro = () => {
           className="relative"
         >
           <Image
-            src="/images/profile.jpg"
+            src="/images/profile.png"
             alt="Wafry Ahamed"
             width={210}
             height={210}
