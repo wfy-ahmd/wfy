@@ -9,6 +9,7 @@ import { Button } from '@/components/button';
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -44,6 +45,9 @@ export const Header = () => {
             <DialogTitle className="text-md self-start font-medium">
               Navigation
             </DialogTitle>
+            <DialogDescription className="sr-only">
+              Mobile navigation menu
+            </DialogDescription>
           </DialogHeader>
           <nav>
             <ul>

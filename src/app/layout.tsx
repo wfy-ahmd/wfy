@@ -192,12 +192,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         />
 
         {/* Preload critical resources */}
-        <link rel="preload" href="/images/profile.jpg" as="image" />
-        <link
-          rel="preload"
-          href="/_next/static/css/app/layout.css"
-          as="style"
-        />
+        <link rel="preload" href="/images/profile.png" as="image" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//github.com" />
         <link rel="dns-prefetch" href="//linkedin.com" />
