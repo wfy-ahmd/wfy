@@ -28,6 +28,7 @@ const HomePage = async () => {
         <SectionDivider />
         <Projects />
         <Contact />
+
         <Footer />
       </main>
       <ThemeToggle className="bg-background/80 fixed right-6 top-6 z-30 hidden backdrop-blur-sm sm:flex" />

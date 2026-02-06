@@ -8,7 +8,11 @@ export const env = createEnv({
 
     EXA_API_KEY: z.string().min(1).optional(),
     OPENROUTER_API_KEY: z.string().min(1).optional(),
-    OPENROUTER_MODEL: z.string().default('tngtech/deepseek-r1t2-chimera:free'), // ⭐ Added safely
+    OPENROUTER_MODEL: z.string().optional(), // ⭐ Added safely
+
+    // Resend API for contact form
+    RESEND_API_KEY: z.string().min(1),
+    RESEND_TO_EMAIL: z.string().email(),
   },
   client: {
     NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: z.string().min(1).optional(),
@@ -22,6 +26,11 @@ export const env = createEnv({
     EXA_API_KEY: process.env.EXA_API_KEY,
     OPENROUTER_API_KEY: process.env.OPENROUTER_API_KEY,
     OPENROUTER_MODEL: process.env.OPENROUTER_MODEL, // ⭐ Added safely
+
+    // Resend API
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
+
     NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID:
       process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID,
     NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID:

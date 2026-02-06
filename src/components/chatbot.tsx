@@ -358,13 +358,13 @@ function JobMatchAnalysis({ content }: { content: string }) {
                 cy="50%"
                 outerRadius={isMobile ? 55 : 70}
                 innerRadius={isMobile ? 35 : 45}
-                // label={({ name, value, percent }) => {
-                //   if (name === 'match' && percent) {
-                //     return `${value}% (${(percent * 100).toFixed(0)}%)`;
-                //   }
-                //   return '';
-                // }}
-                // labelLine={true}
+              // label={({ name, value, percent }) => {
+              //   if (name === 'match' && percent) {
+              //     return `${value}% (${(percent * 100).toFixed(0)}%)`;
+              //   }
+              //   return '';
+              // }}
+              // labelLine={true}
               >
                 {/* Center label */}
                 <Label
@@ -827,7 +827,7 @@ export function Chatbot() {
         const errorData = await response
           .json()
           .catch(() => ({ error: 'Unknown error' }));
-        console.error('API Error:', errorData);
+        console.error('API Error details:', errorData);
         throw new Error(
           errorData.error || `Failed to get response: ${response.status}`
         );
@@ -901,7 +901,7 @@ export function Chatbot() {
         const errorData = await response
           .json()
           .catch(() => ({ error: 'Unknown error' }));
-        console.error('API Error:', errorData);
+        console.error('API Error details:', errorData);
         throw new Error(
           errorData.error || `Failed to get response: ${response.status}`
         );

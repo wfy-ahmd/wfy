@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
-import { useForm } from '@formspree/react';
+import { FormEvent, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { toast } from 'sonner';
@@ -13,14 +12,49 @@ import { useSectionInView } from '@/hooks/use-section-in-view';
 
 export const Contact = () => {
   const { ref } = useSectionInView('Contact');
-  const [state, handleSubmit] = useForm('xeoyzqkw');
+  const [submitting, setSubmitting] = useState(false);
+  const [succeeded, setSucceeded] = useState(false);
+  const [errors, setErrors] = useState<Record<string, unknown> | null>(null);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setErrors(null);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setSucceeded(true);
+      } else {
+        const errorData = await response.json();
+        setErrors({ message: errorData.error || 'Something went wrong' });
+      }
+    } catch {
+      setErrors({ message: 'Network error. Please try again.' });
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   useEffect(() => {
     // Success
-    if (state.succeeded) {
+    if (succeeded) {
       toast.success(
         'Thank you for getting in touch! I will get back to you soon.'
       );
+      setSucceeded(false);
 
       // Reset only this form
       const thisForm = document.querySelector('#contact-form');
@@ -30,10 +64,11 @@ export const Contact = () => {
     }
 
     // Error
-    if (state.errors && Object.keys(state.errors).length > 0) {
+    if (errors && Object.keys(errors).length > 0) {
       toast.error('Something went wrong. Please try again.');
+      setErrors(null);
     }
-  }, [state.succeeded, state.errors]);
+  }, [succeeded, errors]);
 
   return (
     <motion.section
@@ -55,7 +90,7 @@ export const Contact = () => {
               className="text-muted-foreground hover:text-foreground h-fit p-0 font-medium underline transition-colors"
               asChild
             >
-              <Link href="mailto:W@gmail.com">W@gmail.com</Link>
+              <Link href="mailto:W@gmail.com">wafry07@gmail.com</Link>
             </Button>{' '}
             or through this form.
           </>
@@ -118,8 +153,8 @@ export const Contact = () => {
           ></textarea>
         </div>
 
-        <Button type="submit" size="lg" disabled={state.submitting}>
-          {state.submitting ? 'Sending...' : 'Submit'}{' '}
+        <Button type="submit" size="lg" disabled={submitting}>
+          {submitting ? 'Sending...' : 'Submit'}{' '}
           <Icons.arrowRight className="ml-2 size-4" />
         </Button>
       </form>

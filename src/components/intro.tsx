@@ -219,7 +219,7 @@ export const Intro = () => {
 
           <motion.div whileHover={{ scale: 1.03 }} className="hidden sm:flex">
             <Button variant="outline" size="lg" asChild>
-              <a href="/cv/Wafry Ahamed CV.pdf" target="_blank">
+              <a href="/cv/Wafry_Ahamed_CV.pdf" target="_blank">
                 Download CV <Icons.download className="ml-2 size-4" />
               </a>
             </Button>
@@ -236,10 +236,10 @@ export const Intro = () => {
         >
           {[
             {
-              href: 'https://linkedin.com/in',
+              href: 'https://www.linkedin.com/in/wafry-ahamed-59b406252/',
               Icon: Icons.linkedin,
             },
-            { href: 'https://github.com/', Icon: Icons.github },
+            { href: 'https://github.com/WafryAhamed', Icon: Icons.github },
           ].map(({ href, Icon }, i) => (
             <motion.div
               key={i}
