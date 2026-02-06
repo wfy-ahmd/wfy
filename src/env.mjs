@@ -10,9 +10,9 @@ export const env = createEnv({
     OPENROUTER_API_KEY: z.string().min(1).optional(),
     OPENROUTER_MODEL: z.string().optional(), // ⭐ Added safely
 
-    // Resend API for contact form
-    RESEND_API_KEY: z.string().min(1),
-    RESEND_TO_EMAIL: z.string().email(),
+    // Resend API for contact form (optional - contact form will show error if not configured)
+    RESEND_API_KEY: z.string().min(1).optional(),
+    RESEND_TO_EMAIL: z.string().email().optional(),
   },
   client: {
     NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: z.string().min(1).optional(),

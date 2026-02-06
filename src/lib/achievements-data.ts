@@ -29,7 +29,7 @@ export const achievementsData = [
     title: 'Merit Award – Codefest Designathon',
     organization: 'SLIIT',
     period: '2025',
-    image: '/achievements/codefest-2025.jpg', // ADD IMAGE LATER
+    image: '/achievements/codefest-2025.jpeg', // ADD IMAGE LATER
     description:
       'Awarded a Merit Award at the Codefest Designathon 2025, representing Rajarata University of Sri Lanka as the Team Leader of Team InnoX7.',
     achievements: [
@@ -42,7 +42,7 @@ export const achievementsData = [
     title: 'Participant – UniHack Blockchain Hackathon',
     organization: 'Coin Ceylon × University of Kelaniya × Intersect Sri Lanka',
     period: '2025',
-    image: '/achievements/unihack-2025.jpg', // ADD IMAGE LATER
+    image: '/achievements/unihack-2025.jpeg', // ADD IMAGE LATER
     description:
       'Participated in UniHack 2025, Sri Lanka’s first inter-university blockchain hackathon.',
     achievements: [
@@ -55,7 +55,7 @@ export const achievementsData = [
     title: '2nd Place – RUSL XTREME 1.0 Mini Hackathon',
     organization: 'IEEE Student Branch – RUSL',
     period: '2024',
-    image: '/achievements/xtreme-1-2024.jpg', // ADD IMAGE LATER
+    image: '/achievements/xtreme-1-2024.png', // ADD IMAGE LATER
     description:
       'Secured 2nd Place at the RUSL XTREME 1.0 Mini Hackathon, a segment of IEEE XTREME Programming Competition 18.0.',
     achievements: [
@@ -68,7 +68,7 @@ export const achievementsData = [
     title: '2nd Place – Individual Front-End Development',
     organization: 'WebXplore × IEEE Student Branch – RUSL',
     period: '2024',
-    image: '/achievements/frontend-react.jpg', // ADD IMAGE LATER
+    image: '/achievements/frontend-react.jpeg', // ADD IMAGE LATER
     description:
       'Secured 2nd Place in the Individual Front-End Development Competition focused on React.js.',
     achievements: [
@@ -81,7 +81,7 @@ export const achievementsData = [
     title: '3rd Place – Individual UI/UX Designing',
     organization: 'WebXplore × IEEE Student Branch – RUSL',
     period: '2024',
-    image: '/achievements/uiux-2024.jpg', // ADD IMAGE LATER
+    image: '/achievements/uiux-2024.jpeg', // ADD IMAGE LATER
     description:
       'Secured 3rd Place in the Individual UI/UX Designing Competition conducted under WebXplore.',
     achievements: [
@@ -94,7 +94,7 @@ export const achievementsData = [
     title: 'Finalist – Beauty of Cloud Ideathon',
     organization: 'National Inter-University Ideathon',
     period: '2024',
-    image: '/achievements/cloud-ideathon.jpg', // ADD IMAGE LATER
+    image: '/achievements/cloud-ideathon.jpeg', // ADD IMAGE LATER
     description:
       'Finalist in the Beauty of Cloud Ideathon, Sri Lanka’s first inter-university ideathon focused on cloud computing.',
     achievements: [
@@ -107,7 +107,7 @@ export const achievementsData = [
     title: 'Participant – CodeRally 6.0 (24-Hour Hackathon)',
     organization: 'CodeRally',
     period: '2024',
-    image: '/achievements/coderally-6.jpg', // ADD IMAGE LATER
+    image: '/achievements/coderally-6.jpeg', // ADD IMAGE LATER
     description:
       'Participated in the CodeRally 6.0 24-hour coding hackathon focusing on data structures, algorithms, and intensive problem-solving.',
     achievements: [

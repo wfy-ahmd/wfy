@@ -16,8 +16,8 @@ export async function POST(request: NextRequest) {
     }
 
     // Check if Resend API key is configured
-    if (!env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not configured');
+    if (!env.RESEND_API_KEY || !env.RESEND_TO_EMAIL) {
+      console.error('Resend email service is not configured');
       return NextResponse.json(
         { error: 'Email service is not configured' },
         { status: 500 }
@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     const { error } = await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>',
-      to: env.RESEND_TO_EMAIL,
+      to: env.RESEND_TO_EMAIL as string,
       replyTo: email,
       subject: `New Contact Form Message from ${name}`,
       html: `
