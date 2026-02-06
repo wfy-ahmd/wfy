@@ -358,13 +358,13 @@ function JobMatchAnalysis({ content }: { content: string }) {
                 cy="50%"
                 outerRadius={isMobile ? 55 : 70}
                 innerRadius={isMobile ? 35 : 45}
-              // label={({ name, value, percent }) => {
-              //   if (name === 'match' && percent) {
-              //     return `${value}% (${(percent * 100).toFixed(0)}%)`;
-              //   }
-              //   return '';
-              // }}
-              // labelLine={true}
+                // label={({ name, value, percent }) => {
+                //   if (name === 'match' && percent) {
+                //     return `${value}% (${(percent * 100).toFixed(0)}%)`;
+                //   }
+                //   return '';
+                // }}
+                // labelLine={true}
               >
                 {/* Center label */}
                 <Label

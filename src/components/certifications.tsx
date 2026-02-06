@@ -72,23 +72,19 @@ export default function Certifications() {
                 ? { duration: 0 }
                 : { duration: 0.35, delay: index * 0.05 }
             }
-            className="
-              rounded-xl border bg-card p-6
-              transition-all duration-300
-              hover:-translate-y-1 hover:shadow-lg
-            "
+            className="rounded-xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             {/* Title */}
             <h3 className="text-xl font-semibold">{cert.title}</h3>
 
             {/* Provider + Date */}
-            <div className="mt-1 text-sm text-muted-foreground">
+            <div className="text-muted-foreground mt-1 text-sm">
               {cert.provider} • {cert.date}
             </div>
 
             {/* Courses */}
-            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              <span className="font-medium text-foreground">Courses:</span>{' '}
+            <p className="text-muted-foreground mt-3 text-sm leading-relaxed">
+              <span className="text-foreground font-medium">Courses:</span>{' '}
               {cert.courses}
             </p>
           </motion.div>
