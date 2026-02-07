@@ -57,7 +57,7 @@ export const Achievements = () => {
 
               {/* Image */}
               {/* Image */}
-              <div className="relative w-full aspect-[16/9] bg-muted">
+              <div className="bg-muted relative aspect-[16/9] w-full">
                 <Image
                   src={image}
                   alt={title}

@@ -73,7 +73,7 @@ export default function Certifications() {
                 ? { duration: 0 }
                 : { duration: 0.35, delay: index * 0.05 }
             }
-            className="rounded-xl border bg-card p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            className="bg-card rounded-xl border p-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
           >
             {/* Title */}
             <h3 className="text-xl font-semibold">{cert.title}</h3>
