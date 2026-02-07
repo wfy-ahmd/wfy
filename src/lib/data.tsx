@@ -115,7 +115,6 @@ export const projectsData = [
       'Day.js',
       'SCSS',
       'Movie Database API',
-
     ],
     links: {
       preview: 'https://github.com/WafryAhamed/TeamBug',
@@ -141,20 +140,18 @@ export const projectsData = [
       'PostgreSQL',
 
       // Architecture & Concepts
-
     ],
     links: {
       preview: 'https://github.com/WafryAhamed/Ayurvedic-Clinic-Booking-App',
       github: 'https://github.com/WafryAhamed/Ayurvedic-Clinic-Booking-App',
     },
   },
-
-
-  {
-    image: '/images/luca.png',
+  },
+{
+  image: '/images/luca.png',
     title: 'LUCA – Real-Time AI Study Assistant',
-    description:
-      'LUCA is a real-time AI-powered study assistant built with React and Vite, featuring a minimal neon-themed UI, draggable floating tools, smooth chat interactions, file uploads, and customizable study preferences powered by OpenAI and Google Gemini.',
+      description:
+  'LUCA is a real-time AI-powered study assistant built with React and Vite, featuring a minimal neon-themed UI, draggable floating tools, smooth chat interactions, file uploads, and customizable study preferences powered by OpenAI and Google Gemini.',
     technologies: [
       'React 19',
       'Vite',
@@ -165,17 +162,17 @@ export const projectsData = [
       'Manrope Font',
       'Vercel',
     ],
-    links: {
-      preview: 'https://github.com/WafryAhamed/Luca',
+      links: {
+    preview: 'https://github.com/WafryAhamed/Luca',
       github: 'https://github.com/WafryAhamed/Luca',
     },
-  },
+},
 
-  {
-    image: '/images/bakery-delights.png',
+{
+  image: '/images/bakery-delights.png',
     title: 'Bakery Delights – Frontend Bakery Store Website',
-    description:
-      'Bakery Delights is a modern frontend bakery store website built with React and Vite. It features category-based product browsing, real-time search, animations with Framer Motion, third-party authentication, shopping cart functionality, and a fully responsive UI with smooth scrolling and a dynamic sticky header.',
+      description:
+  'Bakery Delights is a modern frontend bakery store website built with React and Vite. It features category-based product browsing, real-time search, animations with Framer Motion, third-party authentication, shopping cart functionality, and a fully responsive UI with smooth scrolling and a dynamic sticky header.',
     technologies: [
       'React.js',
       'Vite',
@@ -187,17 +184,17 @@ export const projectsData = [
       'CSS',
       'ESLint',
     ],
-    links: {
-      preview: 'https://github.com/WafryAhamed/Baked_Delights_website',
+      links: {
+    preview: 'https://github.com/WafryAhamed/Baked_Delights_website',
       github: 'https://github.com/WafryAhamed/Baked_Delights_website',
     },
-  },
+},
 
-  {
-    image: '/images/student-grade-prediction.png',
+{
+  image: '/images/student-grade-prediction.png',
     title: 'Student Grade Prediction using Deep Learning',
-    description:
-      'A deep learning project that predicts student grades (A, B, C, F) using engineered academic features such as quiz averages, study efficiency, participation scores, and assignment penalties. Includes full preprocessing pipelines, multiple neural architectures, Bayesian Optimization, Optuna tuning, and performance comparisons across 15+ models.',
+      description:
+  'A deep learning project that predicts student grades (A, B, C, F) using engineered academic features such as quiz averages, study efficiency, participation scores, and assignment penalties. Includes full preprocessing pipelines, multiple neural architectures, Bayesian Optimization, Optuna tuning, and performance comparisons across 15+ models.',
     technologies: [
       'Python',
       'TensorFlow',
@@ -211,17 +208,17 @@ export const projectsData = [
       'Seaborn',
       'Jupyter Notebook',
     ],
-    links: {
-      preview: 'https://github.com/yourusername/student-grade-prediction',
+      links: {
+    preview: 'https://github.com/yourusername/student-grade-prediction',
       github: 'https://github.com/yourusername/student-grade-prediction',
     },
-  },
+},
 
-  {
-    image: '/images/secure-enterprise-network.png',
+{
+  image: '/images/secure-enterprise-network.png',
     title: 'Secure Enterprise Network Infrastructure with VLANs & DHCP',
-    description:
-      'A secure, enterprise-grade network infrastructure designed using Cisco Packet Tracer. Includes 10 VLANs for departmental segmentation, DHCP-based IP allocation, ACL firewalls, inter-VLAN routing, router-on-a-stick configuration, and centralized Layer 3 switching for efficient and secure network operations.',
+      description:
+  'A secure, enterprise-grade network infrastructure designed using Cisco Packet Tracer. Includes 10 VLANs for departmental segmentation, DHCP-based IP allocation, ACL firewalls, inter-VLAN routing, router-on-a-stick configuration, and centralized Layer 3 switching for efficient and secure network operations.',
     technologies: [
       'Cisco Packet Tracer',
       'VLANs',
@@ -234,14 +231,14 @@ export const projectsData = [
       'Cisco 2960 L2 Switches',
       'Star Topology',
     ],
-    links: {
-      preview:
-        'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP',
+      links: {
+    preview:
+    'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP',
       github:
-        'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP',
+    'https://github.com/yourusername/Secure-Enterprise-Network-Infrastructure-with-VLANs-and-DHCP',
     },
-  },
-] as const;
+},
+] as const ;
 
 export const skillsData = [
   // Existing Skills

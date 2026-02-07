@@ -177,8 +177,7 @@ export const Intro = () => {
           Next.js, Tailwind CSS, Flutter and Framer Motion - and develop
           scalable backends with Node.js, Express, Django, Flask, Python, PHP
           and Java. Passionate about UI/UX, real-world problem solving and
-          future-ready engineering with Cloud, AI, Cybersecurity and
-          Blockchain.
+          future-ready engineering with Cloud, AI, Cybersecurity and Blockchain.
         </motion.p>
 
         {/* BUTTONS */}

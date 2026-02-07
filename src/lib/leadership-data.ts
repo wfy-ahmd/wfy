@@ -78,5 +78,4 @@ export const leadershipData = [
       'Team Collaboration',
     ],
   },
-
 ] as const;

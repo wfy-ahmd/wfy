@@ -476,7 +476,7 @@ Your ONLY purpose:
             (typeof errorData.error === 'string'
               ? errorData.error
               : errorMessage);
-        } catch (e) {
+        } catch {
           const errorText = await response.text();
           console.error('OpenRouter API Text Error:', errorText);
           errorMessage = errorText || errorMessage;

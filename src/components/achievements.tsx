@@ -66,7 +66,6 @@ export const Achievements = () => {
                 />
               </div>
 
-
               {/* Content */}
               <div className="space-y-3 p-5">
                 <div className="text-muted-foreground flex items-center gap-2 text-sm">
