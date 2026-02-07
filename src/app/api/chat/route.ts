@@ -1,9 +1,10 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-import { env } from '@/env.mjs';
-
+// Use direct process.env access to avoid any validation side effects
+// that might trigger auth/cookie checks in Vercel serverless runtime
 export const dynamic = 'force-dynamic';
 export const runtime = 'nodejs'; // Explicitly set Node.js runtime
+export const maxDuration = 60; // Maximum execution time for Vercel serverless
 
 export async function POST(request: NextRequest) {
   try {
@@ -16,7 +17,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const apiKey = env.OPENROUTER_API_KEY;
+    const apiKey = process.env.OPENROUTER_API_KEY;
 
     if (!apiKey) {
       console.error('OPENROUTER_API_KEY is missing in environment variables');
@@ -26,13 +27,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const model = env.OPENROUTER_MODEL || 'deepseek/deepseek-r1:free';
+    const model = process.env.OPENROUTER_MODEL || 'deepseek/deepseek-r1:free';
 
     // Robust URL resolution for Vercel production
     const vercelUrl = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : null;
-    const siteUrl = env.SITE_URL || vercelUrl || 'http://localhost:3000';
+    const siteUrl =
+      process.env.SITE_URL || vercelUrl || 'http://localhost:3000';
 
     try {
       const response = await fetch(
