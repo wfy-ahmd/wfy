@@ -81,7 +81,7 @@ export const Contact = () => {
       viewport={{ once: true }}
     >
       <SectionHeading
-        heading="Get In Touch"
+        heading="Open for Opportunities"
         content={
           <>
             Please contact me directly at{' '}

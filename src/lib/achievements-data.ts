@@ -92,15 +92,16 @@ export const achievementsData = [
   },
   {
     title: 'Finalist – Beauty of Cloud Ideathon',
-    organization: 'National Inter-University Ideathon',
+    organization: 'Inter-University Ideathon',
     period: '2024',
-    image: '/achievements/cloud-ideathon.jpeg', // ADD IMAGE LATER
+    image: '/achievements/cloud-ideathon.jpeg',
     description:
       'Finalist in the Beauty of Cloud Ideathon, Sri Lanka’s first inter-university ideathon focused on cloud computing.',
     achievements: [
       'Cloud Computing Concepts',
       'Ideation & Innovation',
       'National Level Finalist',
+      'Cloud Ideathon',
     ],
   },
   {

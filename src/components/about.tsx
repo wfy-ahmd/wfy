@@ -31,12 +31,12 @@ export const About = () => {
           I work with DevOps tools such as Git, GitHub, CI/CD pipelines, and
           Jenkins to support efficient development and deployment. I deploy and
           manage applications across cloud platforms including AWS, Azure,
-          Vercel, Netlify, and Railway, using Docker-based containerization for
+          Vercel, Netlify and Railway, using Docker-based containerization for
           reliable and consistent environments. I also handle system monitoring
           and regular maintenance to ensure smooth, high-performance operation.
           Beyond deployment, I explore Artificial Intelligence, Cybersecurity,
           and Blockchain—fields that fuel my curiosity and motivate me to build
-          secure, intelligent, and future-ready applications.
+          secure, intelligent and future-ready applications.
         </p>
         <p className="mb-4">
           What truly excites me is the entire lifecycle of creation—designing

@@ -39,6 +39,45 @@ export const links = [
 
 export const projectsData = [
   {
+    image: '/images/cheezybite.png',
+    title: 'CheezyBite – Full-Stack Online Pizza Ordering System',
+    description:
+      'CheezyBite is a full-stack web application developed using Next.js and MongoDB, designed as an online pizza ordering platform with both a customer portal and an admin dashboard. The system supports pizza customization, secure authentication, real-time order tracking, and complete management of orders, users, and products.',
+    technologies: [
+      // Frontend
+      'Next.js',
+      'React 18',
+      'Tailwind CSS',
+      'Lucide React',
+
+      // Backend
+      'Node.js',
+      'Express.js',
+      'Socket.IO',
+
+      // Database
+      'MongoDB',
+
+      // Authentication & Security
+      'JWT',
+      'Bcrypt',
+
+      // Utilities & Tools
+      'Axios',
+      'React Testing Library',
+      'tailwind-merge',
+
+      // Deployment
+      'Vercel',
+      'Railway',
+    ],
+    links: {
+      preview: 'https://cheezy-bite.vercel.app/', // replace if different
+      github: 'https://github.com/WafryAhamed/CheezyBite',
+    },
+  },
+
+  {
     image: '/images/chef-buddy.png',
     title: 'ChefBuddy – Android Meal Planner App',
     description:
@@ -76,13 +115,40 @@ export const projectsData = [
       'Day.js',
       'SCSS',
       'Movie Database API',
-      'Lazy Loading',
+
     ],
     links: {
       preview: 'https://github.com/WafryAhamed/TeamBug',
       github: 'https://github.com/WafryAhamed/TeamBug',
     },
   },
+  {
+    image: '/images/ayurvedic-clinic.png',
+    title: 'Ayurvedic Clinic Booking App',
+    description:
+      'A full-stack appointment booking system connecting patients with Ayurvedic doctors. The project includes a mobile-first Flutter application for patients and an ASP.NET Core Web API backend. Users can browse doctors, view availability, book appointments, and manage bookings, while the backend handles validation, scheduling logic, and data persistence.',
+    technologies: [
+      // Frontend (Mobile)
+      'Flutter',
+      'Dart',
+      'Provider',
+
+
+      // Backend
+      'ASP.NET Core Web API',
+
+      // Database
+      'PostgreSQL',
+
+      // Architecture & Concepts
+
+    ],
+    links: {
+      preview: 'https://github.com/WafryAhamed/Ayurvedic-Clinic-Booking-App',
+      github: 'https://github.com/WafryAhamed/Ayurvedic-Clinic-Booking-App',
+    },
+  },
+
 
   {
     image: '/images/luca.png',

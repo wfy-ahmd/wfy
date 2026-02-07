@@ -23,7 +23,7 @@ export const Skills = () => {
   return (
     <div
       id="skills"
-      className="mt-10 flex w-full flex-wrap justify-between gap-10 px-5 sm:justify-center sm:px-0 md:mt-14 lg:justify-between"
+      className="scroll-mt-28 mt-10 flex w-full flex-wrap justify-between gap-10 px-5 sm:justify-center sm:px-0 md:mt-14 lg:justify-between"
     >
       {skillsData.map(({ icon }, index) => (
         <motion.div

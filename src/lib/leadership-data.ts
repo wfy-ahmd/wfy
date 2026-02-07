@@ -66,4 +66,17 @@ export const leadershipData = [
       'Coordination',
     ],
   },
+  {
+    title: 'Volunteer',
+    company: 'IEEE Student Branch – Rajarata University of Sri Lanka',
+    period: 'Jan 2025 – Present',
+    description:
+      '🔹 Event Support • Technical Coordination • Team Collaboration',
+    technologies: [
+      'Event Coordination',
+      'Technical Support',
+      'Team Collaboration',
+    ],
+  },
+
 ] as const;

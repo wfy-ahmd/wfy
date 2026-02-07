@@ -84,8 +84,8 @@ export const Intro = () => {
           <Image
             src="/images/profile.png"
             alt="Wafry Ahamed"
-            width={210}
-            height={210}
+            width={300}
+            height={300}
             className="
               mx-auto 
               rounded-2xl 
@@ -103,7 +103,7 @@ export const Intro = () => {
           initial="hidden"
           animate="visible"
           transition={{ delay: 0.15 }}
-          className="flex flex-col items-center gap-2 lg:items-end"
+          className="mx-auto flex w-fit flex-col items-center gap-2"
         >
           <Link
             href="#contact"
@@ -174,10 +174,10 @@ export const Intro = () => {
           className="text-muted-foreground max-w-xl text-center lg:text-left"
         >
           I build responsive and high-performance applications using React.js,
-          Next.js, Tailwind CSS, Flutter, and Framer Motion — and develop
-          scalable backends with Node.js, Express, Django, Flask, Python, PHP,
-          and Java. Passionate about UI/UX, real-world problem solving, and
-          future-ready engineering with Cloud, AI, Cybersecurity, and
+          Next.js, Tailwind CSS, Flutter and Framer Motion - and develop
+          scalable backends with Node.js, Express, Django, Flask, Python, PHP
+          and Java. Passionate about UI/UX, real-world problem solving and
+          future-ready engineering with Cloud, AI, Cybersecurity and
           Blockchain.
         </motion.p>
 
@@ -219,7 +219,7 @@ export const Intro = () => {
 
           <motion.div whileHover={{ scale: 1.03 }} className="hidden sm:flex">
             <Button variant="outline" size="lg" asChild>
-              <a href="/cv/Wafry_Ahamed_CV.pdf" target="_blank">
+              <a href="/cv/Wafry_Ahamed__CV.pdf" target="_blank">
                 Download CV <Icons.download className="ml-2 size-4" />
               </a>
             </Button>

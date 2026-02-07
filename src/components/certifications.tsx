@@ -56,9 +56,10 @@ export default function Certifications() {
       animate={{ opacity: 1, y: 0 }}
       transition={prefersReducedMotion ? { duration: 0 } : { duration: 0.4 }}
     >
-      <SectionHeading heading="Certifications" content="     " />
+      <SectionHeading heading="Certifications" content=" " />
 
-      <div className="mx-auto mt-12 max-w-5xl space-y-6">
+      {/* ✅ GRID CONTAINER */}
+      <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {certifications.map((cert, index) => (
           <motion.div
             key={index}

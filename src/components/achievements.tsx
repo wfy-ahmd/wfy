@@ -56,14 +56,16 @@ export const Achievements = () => {
               </div>
 
               {/* Image */}
-              <div className="relative h-40 w-full">
+              {/* Image */}
+              <div className="relative w-full aspect-[16/9] bg-muted">
                 <Image
                   src={image}
                   alt={title}
                   fill
-                  className="object-cover transition-all group-hover:brightness-75"
+                  className="object-contain p-3 transition-all group-hover:brightness-90"
                 />
               </div>
+
 
               {/* Content */}
               <div className="space-y-3 p-5">

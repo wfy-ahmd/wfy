@@ -3,6 +3,8 @@ import { Resend } from 'resend';
 
 import { env } from '@/env.mjs';
 
+export const runtime = 'nodejs'; // Explicitly set Node.js runtime
+
 export async function POST(request: NextRequest) {
   try {
     const { name, email, message } = await request.json();

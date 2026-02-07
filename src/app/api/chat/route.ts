@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from 'next/server';
 
 import { env } from '@/env.mjs';
 
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs'; // Explicitly set Node.js runtime
+
 export async function POST(request: NextRequest) {
   try {
     const { messages } = await request.json();
@@ -13,29 +16,41 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!env.OPENROUTER_API_KEY) {
+    const apiKey = env.OPENROUTER_API_KEY;
+
+    if (!apiKey) {
+      console.error('OPENROUTER_API_KEY is missing in environment variables');
       return NextResponse.json(
         { error: 'OpenRouter API key is not configured' },
         { status: 500 }
       );
     }
 
-    const response = await fetch(
-      'https://openrouter.ai/api/v1/chat/completions',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${env.OPENROUTER_API_KEY}`,
-          'HTTP-Referer': env.SITE_URL || 'http://localhost:3000',
-          'X-Title': 'Wafry Ahamed Portfolio Chatbot',
-        },
-        body: JSON.stringify({
-          model: env.OPENROUTER_MODEL || 'tngtech/deepseek-r1t2-chimera:free',
-          messages: [
-            {
-              role: 'system',
-              content: `You are a friendly and conversational AI assistant for Wafry Ahamed's portfolio website. Your role is to help visitors learn about Wafry in a natural, engaging way.
+    const model = env.OPENROUTER_MODEL || 'deepseek/deepseek-r1:free';
+
+    // Robust URL resolution for Vercel production
+    const vercelUrl = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}`
+      : null;
+    const siteUrl = env.SITE_URL || vercelUrl || 'http://localhost:3000';
+
+    try {
+      const response = await fetch(
+        'https://openrouter.ai/api/v1/chat/completions',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${apiKey}`,
+            'HTTP-Referer': siteUrl,
+            'X-Title': 'Wafry Ahamed Portfolio Chatbot',
+          },
+          body: JSON.stringify({
+            model,
+            messages: [
+              {
+                role: 'system',
+                content: `You are a friendly and conversational AI assistant for Wafry Ahamed's portfolio website. Your role is to help visitors learn about Wafry in a natural, engaging way.
 
 
 You are a friendly, helpful, and conversational AI assistant for **Wafry Ahamed’s portfolio website**. 
@@ -109,6 +124,7 @@ Whenever user asks ANY phrase related to skills:
 - “skills?”
 - “show skills”
 - “can you tell his skills”
+- “tell skills”
 → ALWAYS answer FIRST with SKILLS FORMAT:
 
 [SKILLS: React.js, Next.js, Tailwind CSS, Framer Motion, Node.js, Express.js, MongoDB, MySQL, Python, Django, Flutter]
@@ -440,46 +456,61 @@ Your ONLY purpose:
 **Help visitors learn about Wafry clearly, simply, and professionally using ONLY real verified information.**
 
 `,
-            },
-            ...messages,
-          ],
-          temperature: 0.8,
-          max_tokens: 10000,
-        }),
-      }
-    );
+              },
+              ...messages,
+            ],
+            temperature: 0.8,
+            max_tokens: 10000,
+          }),
+        }
+      );
 
-    if (!response.ok) {
-      let errorMessage = 'Failed to get response from AI';
-      try {
-        const errorData = await response.json();
-        errorMessage =
-          errorData.error?.message || errorData.error || errorMessage;
-        console.error('OpenRouter API error:', errorData);
-      } catch {
-        const errorText = await response.text();
-        console.error('OpenRouter API error (text):', errorText);
-        errorMessage = errorText || errorMessage;
+      if (!response.ok) {
+        let errorMessage = 'Failed to get response from AI';
+        try {
+          const errorData = await response.json();
+          // Log the actual error from OpenRouter for debugging
+          console.error('OpenRouter API Response Error:', errorData);
+          errorMessage =
+            errorData.error?.message ||
+            (typeof errorData.error === 'string'
+              ? errorData.error
+              : errorMessage);
+        } catch (e) {
+          const errorText = await response.text();
+          console.error('OpenRouter API Text Error:', errorText);
+          errorMessage = errorText || errorMessage;
+        }
+
+        // Return a clean 502/500 error instead of forwarding 401 blindly
+        // This prevents the browser from thinking it needs to authenticate with OUR server
+        // if the upstream API is the one complaining about auth.
+        return NextResponse.json(
+          { error: `Processing error: ${errorMessage}` },
+          { status: response.status === 401 ? 502 : response.status }
+        );
       }
+
+      const data = await response.json();
+      const aiMessage = data.choices?.[0]?.message?.content;
+
+      if (!aiMessage) {
+        return NextResponse.json(
+          { error: 'No response from AI' },
+          { status: 500 }
+        );
+      }
+
+      return NextResponse.json({ message: aiMessage });
+    } catch (fetchError) {
+      console.error('Fetch error:', fetchError);
       return NextResponse.json(
-        { error: errorMessage },
-        { status: response.status }
+        { error: 'Failed to connect to AI service' },
+        { status: 503 }
       );
     }
-
-    const data = await response.json();
-    const aiMessage = data.choices?.[0]?.message?.content;
-
-    if (!aiMessage) {
-      return NextResponse.json(
-        { error: 'No response from AI' },
-        { status: 500 }
-      );
-    }
-
-    return NextResponse.json({ message: aiMessage });
   } catch (error) {
-    console.error('Chat API error:', error);
+    console.error('Chat API general error:', error);
     const errorMessage =
       error instanceof Error ? error.message : 'Internal server error';
     return NextResponse.json({ error: errorMessage }, { status: 500 });
