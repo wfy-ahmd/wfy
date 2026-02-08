@@ -192,6 +192,8 @@ When user asks for social links or contact info:
 - LinkedIn: https://www.linkedin.com/in/wafry-ahamed-59b406252/
 
 - Email: (use env email or user-provided email)
+-age is 24 years old.
+-male
 
 ──────────────────────────────────────────────────────────
 WHEN USER SENDS GIBBERISH
