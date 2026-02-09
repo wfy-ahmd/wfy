@@ -162,7 +162,7 @@ export const Intro = () => {
             Wafry Ahamed
           </span>
           <br />
-          Full-Stack Developer &amp; Designer | AI Enthusiast
+          Full-Stack Developer | DevOps &amp; AI Enthusiast
         </motion.h1>
 
         {/* BIO */}
