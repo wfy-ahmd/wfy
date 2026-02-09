@@ -37,6 +37,7 @@ import {
   SiRailway,
   SiScikitlearn,
   SiTensorflow,
+  SiGmail,
   SiVercel,
 } from 'react-icons/si';
 import {
@@ -316,6 +317,9 @@ export const Icons = {
   vercel: SiVercel,
   netlify: SiNetlify,
   railway: SiRailway,
+
+  // Contact
+  gmail: SiGmail,
 
   // AI / ML
   python: SiPython,
