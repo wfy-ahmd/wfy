@@ -17,6 +17,7 @@ import {
   SiGit,
   SiGithub as SiGithubIcon,
   SiGitlab,
+  SiGmail,
   // Cloud
   SiGooglecloud,
   SiGraphql,
@@ -37,7 +38,6 @@ import {
   SiRailway,
   SiScikitlearn,
   SiTensorflow,
-  SiGmail,
   SiVercel,
 } from 'react-icons/si';
 import {

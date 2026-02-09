@@ -239,7 +239,7 @@ export const Intro = () => {
               Icon: Icons.linkedin,
             },
             { href: 'https://github.com/WafryAhamed', Icon: Icons.github },
-            { href: 'mailto:wafry07@gmail.com', Icon: Icons.gmail }, 
+            { href: 'mailto:wafry07@gmail.com', Icon: Icons.gmail },
           ].map(({ href, Icon }, i) => (
             <motion.div
               key={i}
