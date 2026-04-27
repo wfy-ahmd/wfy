@@ -33,6 +33,8 @@ const fadeInAnimationVariants = {
 export const Project = ({ project, index }: TProps) => {
   const { image, title, description, technologies, links } = project;
   const prefersReducedMotion = useReducedMotion();
+  const githubLink = 'github' in links ? links.github : undefined;
+  const previewLabel = githubLink ? 'Preview' : 'View Design';
 
   return (
     <motion.div
@@ -43,12 +45,6 @@ export const Project = ({ project, index }: TProps) => {
       custom={index}
       className="flex flex-col rounded border p-5 "
     >
-      {/* <Link
-        href={links.github}
-        aria-label={title}
-        target="_blank"
-        className="overflow-hidden rounded"
-      > */}
       {image.startsWith('http') ? (
         <Image
           src={image}
@@ -66,7 +62,6 @@ export const Project = ({ project, index }: TProps) => {
           className="rounded transition-transform hover:scale-105"
         />
       )}
-      {/* </Link> */}
       <h3 className="mt-3 text-xl font-medium">{title}</h3>
       <p className="text-muted-foreground mb-2 mt-1">{description}</p>
       <div className="flex flex-wrap gap-2">
@@ -76,18 +71,40 @@ export const Project = ({ project, index }: TProps) => {
           </span>
         ))}
       </div>
-      <Link
-        href={links.preview}
-        aria-label={title}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-4 w-fit"
-      >
-        <Button variant="outline" size="sm" className="flex items-center gap-2">
-          <Icons.preview className="size-4" />
-          Preview
-        </Button>
-      </Link>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <Link
+          href={links.preview}
+          aria-label={`${title} ${previewLabel}`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Button
+            variant="outline"
+            size="sm"
+            className="flex items-center gap-2"
+          >
+            <Icons.preview className="size-4" />
+            {previewLabel}
+          </Button>
+        </Link>
+        {githubLink ? (
+          <Link
+            href={githubLink}
+            aria-label={`${title} GitHub`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button
+              variant="outline"
+              size="sm"
+              className="flex items-center gap-2"
+            >
+              <Icons.githubOutline className="size-4" />
+              GitHub
+            </Button>
+          </Link>
+        ) : null}
+      </div>
     </motion.div>
   );
 };

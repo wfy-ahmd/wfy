@@ -8,9 +8,9 @@ export const env = createEnv({
 
     EXA_API_KEY: z.string().min(1).optional(),
     OPENROUTER_API_KEY: z.string().min(1).optional(),
-    OPENROUTER_MODEL: z.string().optional(), // ⭐ Added safely
+    OPENROUTER_MODEL: z.string().default('openai/gpt-oss-120b:free'), // ⭐ Added safely
 
-    // Resend API for contact form (optional - contact form will show error if not configured)
+    // Resend API for contact form
     RESEND_API_KEY: z.string().min(1).optional(),
     RESEND_TO_EMAIL: z.string().email().optional(),
   },
@@ -30,7 +30,6 @@ export const env = createEnv({
     // Resend API
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
-
     NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID:
       process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID,
     NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID:

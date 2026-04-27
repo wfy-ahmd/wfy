@@ -1,42 +1,58 @@
 // -----------------------------------------------------
 // ⭐ ADDED — All required react-icons imports
 // -----------------------------------------------------
+import { FaAws } from 'react-icons/fa';
 import {
   // Frontend
   SiAngular,
   SiBootstrap,
+  SiClaude,
   SiCypress,
+  SiDevdotto as Dev,
   SiDjango,
   SiExpress,
   SiFastapi,
   SiFigma,
+  SiFirebase,
   SiFlask,
   SiFlutter,
   SiFramer,
   // DevOps
   SiGit,
   SiGithub as SiGithubIcon,
+  SiGithubcopilot,
   SiGitlab,
   SiGmail,
+  // New icons
+  SiGo,
   // Cloud
   SiGooglecloud,
   SiGraphql,
   SiJenkins,
   // Testing
   SiJest,
+  SiKeras,
   SiKubernetes,
+  SiLinux,
+  SiMedium as Medium,
   // Databases
   SiMongodb,
   SiMysql,
   SiNetlify,
+  SiNginx,
   // Backend
   SiNodedotjs,
+  SiNumpy,
+  SiOpenai,
+  SiOpencv,
+  SiPandas,
   SiPostgresql,
   // AI / ML
   SiPython,
   SiPytorch,
   SiRailway,
   SiScikitlearn,
+  SiSqlite,
   SiTensorflow,
   SiVercel,
 } from 'react-icons/si';
@@ -62,6 +78,9 @@ import {
 export const Icons = {
   sun: Sun,
   moon: Moon,
+  Dev: Dev,
+  dev: Dev,
+  Medium: Medium,
   arrowRight: ArrowRight,
   download: Download,
   preview: ExternalLink,
@@ -326,4 +345,20 @@ export const Icons = {
   tensorflow: SiTensorflow,
   pytorch: SiPytorch,
   scikitlearn: SiScikitlearn,
+
+  // New Skills Icons
+  go: SiGo,
+  sqlite: SiSqlite,
+  postgis: SiPostgresql,
+  aws: FaAws,
+  keras: SiKeras,
+  numpy: SiNumpy,
+  pandas: SiPandas,
+  opencv: SiOpencv,
+  nginx: SiNginx,
+  linux: SiLinux,
+  firebase: SiFirebase,
+  openai: SiOpenai,
+  claude: SiClaude,
+  copilot: SiGithubcopilot,
 };

@@ -117,4 +117,18 @@ export const achievementsData = [
       'High-Pressure Problem Solving',
     ],
   },
+  {
+    title: 'Participant – Bio Fusion Hackathon',
+    organization:
+      'IEEE EMBS Student Branch Chapter – University of Sri Jayewardenepura',
+    period: '2025',
+    image: '/achievements/bio-fusion-2025.jpg', // ADD IMAGE LATER
+    description:
+      'Participated in the Bio Fusion Hackathon focused on solving real-world healthcare problems using AI, where we developed a multimodal AI system for PCOS prediction using ultrasound images and clinical data.',
+    achievements: [
+      'Multimodal AI System Development',
+      'Healthcare AI & PCOS Prediction',
+      'Machine Learning & Deep Learning',
+    ],
+  },
 ];

@@ -43,9 +43,9 @@ interface Message {
 }
 
 const PREDEFINED_QUESTIONS = [
-  "What are Wafry  Ahamed's skills and experience?",
-  "Tell me about Wafry  Ahamed's projects",
-  'How can I contact Wafry  Ahamed?',
+  "What are Wafry Ahamed's skills and experience?",
+  "Tell me about Wafry Ahamed's projects",
+  'How can I contact Wafry Ahamed?',
 ];
 
 const FIRST_TIME_KEY = 'chatbot-first-time';
@@ -129,7 +129,23 @@ function JobMatchAnalysis({ content }: { content: string }) {
   if (allSkills.length === 0) {
     // Look for common skill mentions in the content
     const skillKeywords = [
+      'AI',
+      'Machine Learning',
+      'data analysis',
+      'data-driven',
+      'data preprocessing',
+      'decision-making',
+      'devops',
+      'cybersecurity',
+      'cloud',
+      'MLOps',
+      'Real-Time Systems',
+      'Geospatial Analysis',
       'React.js',
+      'Go',
+      '.NET',
+      'spring boot',
+      'postgresql',
       'React',
       'Next.js',
       'Next',
@@ -312,7 +328,7 @@ function JobMatchAnalysis({ content }: { content: string }) {
 
   // Extract "Why Wafry  is a Perfect Fit" section
   const fitMatch = content.match(
-    /\*\*Why Wafry {2}is a (Perfect|Great|Excellent) Fit:\*\*([\s\S]*?)(?=\*\*|Would you|$)/
+    /\*\*Why Wafry is a (Perfect|Great|Excellent) Fit:\*\*([\s\S]*?)(?=\*\*|Would you|$)/
   );
   const fitText = fitMatch ? fitMatch[2] : '';
 
@@ -524,7 +540,7 @@ function JobMatchAnalysis({ content }: { content: string }) {
       {(() => {
         // Extract content after "Why Wafry  is a Perfect Fit" section
         const afterFitMatch = content.match(
-          /\*\*Why Wafry {2}is a (Perfect|Great|Excellent) Fit:\*\*([\s\S]*)/
+          /\*\*Why Wafry is a (Perfect|Great|Excellent) Fit:\*\*([\s\S]*)/
         );
         if (afterFitMatch) {
           let remainingText = afterFitMatch[2];
@@ -728,7 +744,7 @@ export function Chatbot() {
       id: '1',
       role: 'assistant',
       content:
-        "Hello! I'm here to help you learn about Wafry  Ahamed - his skills, projects, experience, and professional background.\n\n**For Recruiters:** If you have a job description or role requirements, feel free to paste it here and I'll provide a detailed match analysis showing how Wafry 's skills and experience align with your needs.\n\n**For Visitors:** You can ask me about Wafry 's technical skills, notable projects, work experience, or anything else you'd like to know. How can I assist you today?",
+        "Hello! I'm here to help you learn about Wafry Ahamed - his skills, projects, experience, and professional background.\n\n**For Recruiters:** If you have a job description or role requirements, feel free to paste it here and I'll provide a detailed match analysis showing how Wafry's skills and experience align with your needs.\n\n**For Visitors:** You can ask me about Wafry's technical skills, notable projects, work experience, or anything else you'd like to know. How can I assist you today?",
       timestamp: new Date(),
     },
   ]);
@@ -827,7 +843,9 @@ export function Chatbot() {
         const errorData = await response
           .json()
           .catch(() => ({ error: 'Unknown error' }));
-        console.error('API Error details:', errorData);
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('API Error details:', errorData);
+        }
         throw new Error(
           errorData.error || `Failed to get response: ${response.status}`
         );
@@ -843,7 +861,9 @@ export function Chatbot() {
 
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error sending message:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Error sending message:', error);
+      }
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
@@ -901,7 +921,9 @@ export function Chatbot() {
         const errorData = await response
           .json()
           .catch(() => ({ error: 'Unknown error' }));
-        console.error('API Error details:', errorData);
+        if (process.env.NODE_ENV === 'development') {
+          console.warn('API Error details:', errorData);
+        }
         throw new Error(
           errorData.error || `Failed to get response: ${response.status}`
         );
@@ -917,7 +939,9 @@ export function Chatbot() {
 
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (error) {
-      console.error('Error sending message:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Error sending message:', error);
+      }
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         role: 'assistant',
@@ -1122,7 +1146,9 @@ export function Chatbot() {
                     )}
                   >
                     <motion.div
-                      whileHover={{ scale: 1.02 }}
+                      whileHover={
+                        message.role === 'user' ? undefined : { scale: 1.02 }
+                      }
                       className={cn(
                         'max-w-[85%] rounded-2xl px-3 py-2 text-sm sm:max-w-[80%] sm:px-4',
                         message.role === 'user'

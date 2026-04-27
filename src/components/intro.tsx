@@ -1,5 +1,6 @@
 'use client';
 
+import type { SVGProps } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -47,7 +48,8 @@ export const Intro = () => {
         items-center 
         gap-8 
         text-center 
-        sm:mt-28
+        scroll-mt-28
+        sm:mt-48
         lg:mt-0 
         lg:flex-row 
         lg:items-center 
@@ -162,7 +164,8 @@ export const Intro = () => {
             Wafry Ahamed
           </span>
           <br />
-          Full-Stack Developer | DevOps &amp; AI Enthusiast
+          Full-Stack Developer | DevOps & AI Enthusiast
+          {/* Aspiring AI/ML Developer | Full-Stack Developer with DevOps Experience */}
         </motion.h1>
 
         {/* BIO */}
@@ -174,10 +177,11 @@ export const Intro = () => {
           className="text-muted-foreground max-w-xl text-center lg:text-left"
         >
           I build responsive and high-performance applications using React.js,
-          Next.js, Tailwind CSS, Flutter and Framer Motion - and develop
-          scalable backends with Node.js, Express, Django, Flask, Python, PHP
-          and Java. Passionate about UI/UX, real-world problem solving and
-          future-ready engineering with Cloud, AI, Cybersecurity and Blockchain.
+          Next.js, Tailwind CSS, Flutter, and Framer Motion, and develop
+          scalable backends with Python, PHP, Java, Spring Boot, Laravel, .NET,
+          Django, Flask and Node.js. I’m also passionate about AI-driven
+          solutions, UI/UX design, real-world problem solving, and future-ready
+          engineering with Cloud, Cybersecurity and Blockchain technologies.
         </motion.p>
 
         {/* BUTTONS */}
@@ -239,7 +243,22 @@ export const Intro = () => {
               Icon: Icons.linkedin,
             },
             { href: 'https://github.com/WafryAhamed', Icon: Icons.github },
-            { href: 'mailto:wafry07@gmail.com', Icon: Icons.gmail },
+            {
+              href: 'https://mail.google.com/mail/?view=cm&fs=1&to=wafry07@gmail.com',
+              Icon: Icons.gmail,
+            },
+            {
+              href: 'https://dev.to/wafry_ahamed',
+              Icon: (props: SVGProps<SVGSVGElement>) => (
+                <Icons.Dev {...props} className="size-7" />
+              ),
+            },
+            {
+              href: 'https://medium.com/@Wafry_Ahamed',
+              Icon: (props: SVGProps<SVGSVGElement>) => (
+                <Icons.Medium {...props} className="w-10 h-6" />
+              ),
+            },
           ].map(({ href, Icon }, i) => (
             <motion.div
               key={i}

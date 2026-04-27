@@ -52,7 +52,9 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error('Resend API error:', error);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Resend API error:', error);
+      }
       return NextResponse.json(
         { error: 'Failed to send email' },
         { status: 500 }
@@ -61,7 +63,9 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Contact API error:', error);
+    if (process.env.NODE_ENV === 'development') {
+      console.warn('Contact API error:', error);
+    }
     const errorMessage =
       error instanceof Error ? error.message : 'Internal server error';
     return NextResponse.json({ error: errorMessage }, { status: 500 });

@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     creator: '@Wafry',
     images: [`${siteConfig.url}/images/metaimg.png`],
   },
-  authors: [{ name: 'Wafry Ahamed', url: 'https://github.com/Wafry' }],
+  authors: [{ name: 'Wafry Ahamed', url: 'https://github.com/WafryAhamed' }],
   creator: 'Wafry Ahamed',
   publisher: 'Wafry Ahamed',
   alternates: {
@@ -72,6 +72,18 @@ export const metadata: Metadata = {
 };
 
 const RootLayout = ({ children }: PropsWithChildren) => {
+  const hasValidGtmId =
+    typeof env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID === 'string' &&
+    /^GTM-[A-Z0-9]+$/i.test(env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID);
+
+  const hasValidAdsenseClientId =
+    typeof env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID === 'string' &&
+    /^ca-pub-\d+$/.test(env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID);
+
+  const hasValidClarityId =
+    typeof env.NEXT_PUBLIC_MICROSOFT_CLARITY_ID === 'string' &&
+    /^[A-Za-z0-9]+$/.test(env.NEXT_PUBLIC_MICROSOFT_CLARITY_ID);
+
   // Structured Data for SEO
   const structuredData = {
     '@context': 'https://schema.org',
@@ -85,8 +97,8 @@ const RootLayout = ({ children }: PropsWithChildren) => {
     image: `${siteConfig.url}/images/profile.jpg`,
     email: 'wafryahamed@gmail.com',
     sameAs: [
-      'https://github.com/Wafry',
-      'https://linkedin.com/in/wafry',
+      'https://github.com/WafryAhamed',
+      'https://linkedin.com/in/wafry-ahamed-59b406252/',
       'https://instagram.com/wafryahamed',
     ],
     address: {
@@ -158,7 +170,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         <link rel="alternate" hrefLang="x-default" href={siteConfig.url} />
 
         {/* Google Tag Manager */}
-        {env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (
+        {hasValidGtmId && (
           <Script
             id="gtm-script"
             strategy="afterInteractive"
@@ -175,7 +187,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         )}
 
         {/* Google AdSense */}
-        {env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID && (
+        {hasValidAdsenseClientId && (
           <Script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${env.NEXT_PUBLIC_GOOGLE_ADSENSE_CLIENT_ID}`}
@@ -206,7 +218,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         </a>
 
         {/* Google Tag Manager (noscript) */}
-        {env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID && (
+        {hasValidGtmId && (
           <noscript>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}`}
@@ -218,7 +230,7 @@ const RootLayout = ({ children }: PropsWithChildren) => {
         )}
 
         {/* Microsoft Clarity */}
-        {env.NEXT_PUBLIC_MICROSOFT_CLARITY_ID && (
+        {hasValidClarityId && (
           <Script
             id="clarity-script"
             strategy="afterInteractive"

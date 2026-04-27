@@ -21,6 +21,7 @@ const HomePage = async () => {
         <About />
         <SectionDivider />
         <Skills />
+        <SectionDivider />
         <Certifications />
         <SectionDivider />
         <Achievements />

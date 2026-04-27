@@ -9,7 +9,7 @@ export const Footer = () => {
         variant="link"
         className="text-muted-foreground p-0 font-medium"
       >
-        <a href="https://github.com/WafryAhamed06">Wafry Ahamed</a>
+        <a href="https://github.com/WafryAhamed">Wafry Ahamed</a>
       </Button>
       . All rights reserved.
     </footer>

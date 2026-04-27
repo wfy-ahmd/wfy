@@ -24,8 +24,8 @@ export const Projects = () => {
     : { opacity: 0, y: 20 };
   const ctaTransition = prefersReducedMotion ? { duration: 0 } : { delay: 0.3 };
 
-  // Show only first 2 projects
-  const featuredProjects = projectsData.slice(0, 4);
+  // Show only first 6 projects
+  const featuredProjects = projectsData.slice(0, 6);
 
   return (
     <section id="projects" className="my-10 scroll-mt-28 md:mb-20">
