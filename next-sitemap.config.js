@@ -1,10 +1,10 @@
 module.exports = {
-  siteUrl: 'https://name.app',
+  siteUrl: 'https://wafryahamed.com',
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],
-    additionalSitemaps: ['https://name.app/sitemap.xml'],
+    additionalSitemaps: ['https://wafryahamed.com/sitemap.xml'],
   },
   // Additional paths for better indexing
   additionalPaths: async () => {
